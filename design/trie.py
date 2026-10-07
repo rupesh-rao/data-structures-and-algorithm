@@ -10,9 +10,9 @@ Each node of the trie will have 26 pointers to represent the letters from a-z.
 A boolean flag is used to mark the end of a word in the path of a Trie.
 
 For more: https://www.geeksforgeeks.org/cpp/trie-data-structure-in-cpp/
-
 """
 
+# https://leetcode.com/problems/implement-trie-prefix-tree/description/
 class TrieNode:
     def __init__(self):
         self.characters = [False] * 26
@@ -48,6 +48,7 @@ class Trie:
                 return False
             curr = curr.characters[ind]
         return True
+
 # Your Trie object will be instantiated and called as such:
 # obj = Trie()
 # obj.insert(word)
