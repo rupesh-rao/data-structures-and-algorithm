@@ -3,7 +3,7 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-
+# https://takeuforward.org/practice/dsa/remove-nth-node-from-the-back-of-the-ll
 class Solution:
     def removeNthFromEnd(self, head, n):
         # return if head is None
