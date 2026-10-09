@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/minimum-insertions-to-balance-a-parentheses-string/description
 class Solution:
     def minInsertions(self, s: str) -> int:
         n = len(s)
