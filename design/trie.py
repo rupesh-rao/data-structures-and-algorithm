@@ -1,7 +1,11 @@
 """
-A Trie data structure is a tree-like data structure where each node represents a character of a string sequence. The root node represents an empty string, and each edge represents a character. The path from the root to a node represents a prefix of a string stored in the Trie. This structure allows for efficient insertion, deletion, and search operations.
+A Trie data structure is a tree-like data structure where each node represents a character of a string sequence.
+The root node represents an empty string, and each edge represents a character.
+The path from the root to a node represents a prefix of a string stored in the Trie.
+This structure allows for efficient insertion, deletion, and search operations.
 
-For example, if we consider a Trie for storing strings with only lowercase characters then each node of the trie will consist of 26 children each representing the presence of letters from a-z. Following are some properties of the trie data structure:
+For example, if we consider a Trie for storing strings with only lowercase characters then each node of the trie will consist of 26 children
+ each representing the presence of letters from a-z. Following are some properties of the trie data structure:
 
 Each node will represent a single character of the string.
 The root node represents an empty string.
