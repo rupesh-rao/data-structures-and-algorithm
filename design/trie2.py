@@ -56,13 +56,14 @@ class Trie:
         :type word: str
         :rtype: None
         """
+        if self.countWordsEqualTo(word) == 0:
+            return
         curr = self.root
         for i in word:
             ind = ord(i) - ord('a')
             curr = curr.characters[ind]
             curr.isPrefix -= 1
         curr.isWord -= 1
-
 # Your Trie object will be instantiated and called as such:
 # obj = Trie()
 # obj.insert(word)
