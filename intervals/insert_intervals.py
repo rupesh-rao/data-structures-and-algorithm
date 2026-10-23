@@ -1,3 +1,4 @@
+# https://takeuforward.org/practice/dsa/insert-interval
 class Solution:
     def insertNewInterval(self, intervals, newInterval):
         res = []

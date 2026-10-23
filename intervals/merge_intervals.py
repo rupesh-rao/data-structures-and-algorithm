@@ -1,3 +1,4 @@
+# https://takeuforward.org/practice/dsa/merge-intervals
 class Solution:
     def merge(self, intervals: list[list[int]]) -> list[list[int]]:
         n = len(intervals)
