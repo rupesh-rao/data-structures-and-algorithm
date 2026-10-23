@@ -25,6 +25,19 @@ class Solution:
 
         return False
 
+class Solution2:
+    def isCyclic(self, V, adj):
+        # To store the topological ordering
+        topo = self.topoSort(V, adj)
+
+        # If topological sort doesn't include all
+        # nodes, the graph is cyclic in nature
+        if len(topo) < V:
+            return True
+
+        # Else the graph is acyclic
+        return False
+
     # Function to return the topological
     # sorting of given graph
     def topoSort(self, V, adj):
@@ -67,17 +80,3 @@ class Solution:
 
         # Return the result
         return ans
-
-    # Function to detect cycle in a directed graph.
-    def isCyclicBFS(self, V, adj):
-        # To store the topological ordering
-        topo = self.topoSort(V, adj)
-
-        # If topological sort doesn't include all
-        # nodes, the graph is cyclic in nature
-        if len(topo) < V:
-            return True
-
-        # Else the graph is acyclic
-        return False
-
