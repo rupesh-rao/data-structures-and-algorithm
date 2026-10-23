@@ -24,3 +24,60 @@ class Solution:
                 return True
 
         return False
+
+    # Function to return the topological
+    # sorting of given graph
+    def topoSort(self, V, adj):
+        # To store the result
+        ans = []
+
+        # To store the In-degrees of nodes
+        inDegree = [0] * V
+
+        # Calculating the In-degree of the given graph
+        for i in range(V):
+            for it in adj[i]:
+                inDegree[it] += 1
+        from collections import deque
+        # Queue to facilitate BFS
+        q = deque()
+
+        # Add the nodes with no in-degree to queue
+        for i in range(V):
+            if inDegree[i] == 0:
+                q.append(i)
+
+        # Until the queue is empty
+        while q:
+            # Get the node
+            node = q.popleft()
+
+            # Add it to the answer
+            ans.append(node)
+
+            # Traverse the neighbours
+            for it in adj[node]:
+                # Decrement the in-degree
+                inDegree[it] -= 1
+
+                # Add the node to queue if
+                # its in-degree becomes zero
+                if inDegree[it] == 0:
+                    q.append(it)
+
+        # Return the result
+        return ans
+
+    # Function to detect cycle in a directed graph.
+    def isCyclicBFS(self, V, adj):
+        # To store the topological ordering
+        topo = self.topoSort(V, adj)
+
+        # If topological sort doesn't include all
+        # nodes, the graph is cyclic in nature
+        if len(topo) < V:
+            return True
+
+        # Else the graph is acyclic
+        return False
+
