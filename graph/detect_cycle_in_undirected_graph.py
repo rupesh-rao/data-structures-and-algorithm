@@ -39,7 +39,6 @@ class Solution2:
             else:
                 parent[x] = y
                 rank[y] += 1
-            return True
 
         parent = list(range(N))
         rank = [0] * N
