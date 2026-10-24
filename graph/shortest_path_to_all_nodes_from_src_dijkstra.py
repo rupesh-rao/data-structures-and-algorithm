@@ -1,5 +1,5 @@
 # https://takeuforward.org/practice/dsa/dijkstra's-algorithm
-# https://leetcode.com/problems/network-delay-time
+# Only works for Positive Weights
 class Solution:
     def dijkstra(self, V, edges, src):
         # create adjacency list
