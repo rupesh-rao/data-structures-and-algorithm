@@ -32,7 +32,7 @@ class Solution:
                     low[node] = min(low[node], tin[adjNode])
 
         self.timer = 0
-        adj = [[] for _ in range(V)]
+        adj: list[list[int]] = [[] for _ in range(V)]
         vis = [False] * V
         # to store the time of insertion(first time the node is visited)
         tin = [0] * V
