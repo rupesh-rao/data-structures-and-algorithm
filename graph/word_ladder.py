@@ -1,18 +1,17 @@
 class Solution:
     def wordLadderLength(self, startWord, targetWord, wordList):
-        # target word cannot be formed
-        if targetWord not in wordList:
-            return 0
         # add words to dictionary for easy retrieval
-        wordDict = {}
-        for word in wordList:
-            wordDict[word] = 1
+        wordDict = set(wordList)
+
+        # target word cannot be formed
+        if targetWord not in wordDict:
+            return 0
+
         from collections import deque
         # initialise queue for bfs
         q = deque()
         q.append(startWord)
-        # initialise vis for bfs
-        vis = {}
+
         # initialise depth
         depth = 0
         # perform bfs
@@ -32,9 +31,9 @@ class Solution:
                             continue
                         # create new word excluding character at 'i'
                         newWord = node[:i] + chr(97 + j) + node[i + 1:]
-                        # if new word is present in wordDict and not present in vis, add it to bfs queue
-                        if newWord in wordDict and newWord not in vis:
-                            vis[newWord] = 1
+                        # if new word is present in wordDict, add it to bfs queue
+                        if newWord in wordDict:
+                            wordDict.remove(newWord)
                             q.append(newWord)
 
         return 0
