@@ -25,9 +25,9 @@ class MinHeap:
             left = 2*index+1
             right = 2*index+2
             minIndex = index
-            if left < self.size and self.arr[left] < self.arr[index]:
+            if left < self.size and self.arr[left] < self.arr[minIndex]:
                 minIndex = left
-            if right < self.size and self.arr[right] < self.arr[index]:
+            if right < self.size and self.arr[right] < self.arr[minIndex]:
                 minIndex = right
 
             if index != minIndex:
