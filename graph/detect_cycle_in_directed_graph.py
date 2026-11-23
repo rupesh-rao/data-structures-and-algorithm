@@ -5,25 +5,28 @@ class Solution:
         Use recStack to find if the node is visited in the current DFS path.
         vis is not reliable as it may be visited by some other path
         """
-        def helper(u):
-            vis[u] = True
-            recStack[u] = True
-            for v in adj[u]:
-                if not vis[v] and helper(v):
-                    return True
-                if recStack[v]:
-                    return True
-            recStack[u] = False
+        def isCyclic(self, N, adj):
+            def dfs(u):
+                vis[u] = True
+                recStack[u] = True
+
+                for v in adj[u]:
+                    if not vis[v]:
+                        if dfs(v):
+                            return True
+                    if recStack[v]:
+                        return True
+                recStack[u] = False
+                return False
+
+            vis = [False] * N
+            recStack = [False] * N
+
+            for node in range(N):
+                if not vis[node]:
+                    if dfs(node):
+                        return True
             return False
-
-        vis = [False] * N
-        recStack = [False] * N
-
-        for i in range(N):
-            if not vis[i] and helper(i):
-                return True
-
-        return False
 
 class Solution2:
     def isCyclic(self, V, adj):
