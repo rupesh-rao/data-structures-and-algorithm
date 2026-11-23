@@ -15,7 +15,6 @@ class Solution:
             return False
 
         vis = [False] * N
-        adj = adj
         for i in range(N):
             if not vis[i] and helper(i, -1):
                 return True
